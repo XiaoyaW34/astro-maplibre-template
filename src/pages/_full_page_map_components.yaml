@@ -1,36 +1,50 @@
-# - id: 'pizza'
-#   label: 'Pizza Places'
-#   toggle: true
-#   visible: true
-#   data-type: 'geojson'
-#   layer-type: 'circle'
-#   url: 'https://data.cityofnewyork.us/resource/43nn-pn8j.geojson?cuisine_description=Pizza&$limit=10000'
-#   paint:
-#     circle-color: '#ff0000'
-#     circle-radius: 5
-#   mouseEvent:
-#     - type: "click"
-#       content:
-#         - h1:
-#             - str: "Feature Info"
-#         - p:
-#             - str: "Description"
-#         - p:
-#             - str: "Name: "
-#             - property: "dba"
-#               else: "N/A"
-
-- id: 'census_tract'
-  label: 'Census Tracts'
+- id: 'hotspot1'
+  label: 'Western cluster of states with high life expectancy'
   toggle: true  
   visible: false
   data-type: 'geojson'
   layer-type: 'fill'
-  url: 'data\Tennessee_life.geojson'
+  url: 'data\hotspot1.geojson'
   paint:
-    fill-color: '#e3e3e3'
-    fill-opacity: 0.7
-    fill-outline-color: '#4b4b4b'
+    fill-color: '#b97e7f'
+    fill-opacity: 0.9
+    fill-outline-color: 'black'
+
+- id: 'hotspot2'
+  label: 'Eastern cluster of states with high life expectancy'
+  toggle: true  
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'fill'
+  url: 'data\hotspot2.geojson'
+  paint:
+    fill-color: '#b97e7f'
+    fill-opacity: 0.9
+    fill-outline-color: 'black'
+
+- id: 'coldspot'
+  label: 'Cluster of states with low life expectancy'
+  toggle: true  
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'fill'
+  url: 'data\coldspot.geojson'
+  paint:
+    fill-color: '#7e90b9'
+    fill-opacity: 0.9
+    fill-outline-color: 'black'
+
+- id: 'doughnut'
+  label: 'Abnormal state'
+  toggle: true  
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'fill'
+  url: 'data\doughnut.geojson'
+  paint:
+    fill-color: '#919191'
+    fill-opacity: 0.9
+    fill-outline-color: 'black'
 
 - id: 'county_line'
   label: 'Counties Outline'
