@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://XiaoyaW34.github.io",
+  site: "https://xiaoyaw34.github.io",
   base: "astro-maplibre-template",
   integrations: [mdx(), sitemap(), tailwind()],
 });
