@@ -16,7 +16,7 @@
   visible: false
   data-type: 'geojson'
   layer-type: 'fill'
-  url: 'data/hotspot2.geojson'
+  url: 'https://data.cityofnewyork.us/resource/wmsu-5muw.geojson'
   paint:
     fill-color: '#b97e7f'
     fill-opacity: 0.9
