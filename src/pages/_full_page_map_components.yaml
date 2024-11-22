@@ -1,55 +1,138 @@
-- id: 'hotspot1'
-  label: 'Western cluster of states with high life expectancy'
+- id: 'hotspot'
+  label: 'Counties with high Life Expectancy Surrounded by high Values'
   toggle: true  
-  visible: false
+  visible: true
   data-type: 'geojson'
   layer-type: 'fill'
-  url: './data/hotspot1.geojson'
+  url: './data/counties_hotspot.geojson'
   paint:
-    fill-color: '#b97e7f'
-    fill-opacity: 0.9
+    fill-color:  [
+      'step',
+      ['get', 'County Value'],
+      '#d3edb1',
+      77, '#c1e6ab',
+      78.4, '#afdfa5',
+      79.1, '#97cfa7',
+      79.6, '#7cbcac', 
+      80.2, '#61a9b1',
+      80.8, '#4696b5',
+      81.5, '#2b83ba'
+]
+    fill-opacity: 1
     fill-outline-color: 'black'
-
-- id: 'hotspot2'
-  label: 'Eastern cluster of states with high life expectancy'
-  toggle: true  
-  visible: false
-  data-type: 'geojson'
-  layer-type: 'fill'
-  url: './data/hotspot2.geojson'
-  paint:
-    fill-color: '#b97e7f'
-    fill-opacity: 0.9
-    fill-outline-color: 'black'
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "State:"
+            - property: "State_name"
+              else: "N/A"
+        - p:
+            - str: "Name:"
+            - property: "NAME"
+              else: "N/A"
+        - p:
+            - str: "Life Expectancy: "
+            - property: "County Value"
+              else: "N/A"
 
 - id: 'coldspot'
-  label: 'Cluster of states with low life expectancy'
+  label: 'Counties with low Life Expectancy Surrounded by low Values'
   toggle: true  
-  visible: false
+  visible: true
   data-type: 'geojson'
   layer-type: 'fill'
-  url: './data/coldspot.geojson'
+  url: './data/counties_coldspot.geojson'
   paint:
-    fill-color: '#7e90b9'
-    fill-opacity: 0.9
-    fill-outline-color: 'black'
+    fill-color: [
+      'step',
+      ['get', 'County Value'],
+      '#ffffff',
+      66, '#d7191c',
+      72.2125, '#e1412e',
+      73.125, '#eb6841',
+      73.8, '#f59053',
+      74.3, '#fdb367',
+      74.8, '#fec980',
+      75.4, '#fedf99',
+      76.1, '#fff4b2'
+]
+    fill-opacity: 1
+    fill-outline-color: 'white'
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "State:"
+            - property: "State_name"
+              else: "N/A"
+        - p:
+            - str: "Name:"
+            - property: "NAME"
+              else: "N/A"
+        - p:
+            - str: "Life Expectancy: "
+            - property: "County Value"
+              else: "N/A"
 
 - id: 'doughnut'
-  label: 'Abnormal state'
+  label: 'Counties with low Life Expectancy Surrounded by high Values'
   toggle: true  
-  visible: false
+  visible: true
   data-type: 'geojson'
   layer-type: 'fill'
-  url: './data/doughnut.geojson'
+  url: './data/counties_doughnut.geojson'
   paint:
     fill-color: '#919191'
-    fill-opacity: 0.9
+    fill-opacity: 1
     fill-outline-color: 'black'
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "State:"
+            - property: "State_name"
+              else: "N/A"
+        - p:
+            - str: "Name:"
+            - property: "NAME"
+              else: "N/A"
+        - p:
+            - str: "Life Expectancy: "
+            - property: "County Value"
+              else: "N/A"
+
+- id: 'diamond'
+  label: 'Counties with high Life Expectancy Surrounded by low Values'
+  toggle: true  
+  visible: true
+  data-type: 'geojson'
+  layer-type: 'fill'
+  url: './data/counties_diamond.geojson'
+  paint:
+    fill-color: 'white'
+    fill-opacity: 1
+    fill-outline-color: 'black'
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "State:"
+            - property: "State_name"
+              else: "N/A"
+        - p:
+            - str: "Name:"
+            - property: "NAME"
+              else: "N/A"
+        - p:
+            - str: "Life Expectancy: "
+            - property: "County Value"
+              else: "N/A"
 
 - id: 'county_line'
   label: 'Counties Outline'
   toggle: true  
-  visible: true
+  visible: false
   data-type: 'geojson'
   layer-type: 'line'
   url: './data/counties.geojson'
